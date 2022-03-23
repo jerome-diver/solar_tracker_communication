@@ -10,16 +10,34 @@ from serial import Serial
 class Communicate:
     """through USB"""
     def __init__(self):
-        pass
+        self.view = None
+        self.model_rtc = None
+        self.model_magnetometer = None
+        self.model_eeprom = None
+        self.arduino = Serial()
+        self.arduino.baudrate = 9600
 
     def use_view(self, view):
         self.view = view
 
-    def use_model(self, model):
+    def use_model_rtc(self, model):
         """Use this model"""
-        self.model = model
+        self.model_rtc = model
+
+    def use_model_magnetometer(self, model):
+        """Use this model"""
+        self.model_magnetometer = model
+
+    def use_model_eeprom(self, model):
+        """Use this model"""
+        self.model_eeprom = model
+
+    def set_port(self, port):
+        """Set USB port"""
+        self.arduino.port = port
 
     def test(self):
         """Test communication with Arduino"""
-        pass
+        self.arduino.open()
+        self.arduino.write(b'Test')
 

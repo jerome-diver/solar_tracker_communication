@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>Arduino-Nano-hardware v3_0 photo.png</file>
+    <file>sunrise 1.png</file>
+    <file>sunset 1.png</file>
+    <file>calendrier.png</file>
+    <file>solar_track.png</file>
+  </qresource>
+</RCC>

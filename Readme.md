@@ -11,6 +11,7 @@ Maybe to get some data from theSolar Tracker (as time of rising and sleeping sun
 
 ## Tools used for the project
 - [PyCharm-community](https://www.jetbrains.com/pycharm/download/#section=linux) IDE
+- Gimp
 - [pipenv](https://pipenv.pypa.io/en/latest/) Python package manager
 - [pyenv](https://github.com/pyenv/pyenv) Python environment manager
 - [Python-3.10](https://www.python.org/doc/)
