@@ -5,13 +5,15 @@ class Setting:
 
     def __init__(self):
         """Setting RTC Controller need a model and a view to be runnable"""
-        pass
+        self._model = None
+        self._view = None
 
-    def use_model(self, model):
-        """Use this model"""
-        self.model = model
+    @property
+    def model(self, model) -> None:
+        """model property getter"""
+        self._model = model
 
-    def use_view(self, view):
-        """Use this view"""
-        self.view = view
+    def view(self, view) -> None:
+        """view property getter"""
+        self._view = view
 

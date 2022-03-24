@@ -88,6 +88,12 @@
            </item>
            <item row="0" column="2">
             <widget class="QLabel" name="label_locale">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>64</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
@@ -95,15 +101,30 @@
               </size>
              </property>
              <property name="text">
-              <string>Locale</string>
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="../images/resources.qrc">:/icons/local_world.png</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>false</bool>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
+             </property>
+             <property name="margin">
+              <number>5</number>
              </property>
             </widget>
            </item>
            <item row="0" column="3">
             <widget class="QLabel" name="label_solar_tracker">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>64</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
                <width>16777215</width>
@@ -111,10 +132,19 @@
               </size>
              </property>
              <property name="text">
-              <string>Solar Tracker</string>
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="../images/resources.qrc">:/icons/solar_track_1.png</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>false</bool>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
+             </property>
+             <property name="margin">
+              <number>5</number>
              </property>
             </widget>
            </item>
@@ -127,7 +157,10 @@
               </size>
              </property>
              <property name="text">
-              <string>Heure</string>
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="../images/resources.qrc">:/icons/clock_time.png</pixmap>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
@@ -146,7 +179,10 @@
               </size>
              </property>
              <property name="text">
-              <string>Date</string>
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="../images/resources.qrc">:/icons/calendar.png</pixmap>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
@@ -199,59 +235,68 @@
            <string>Début de journée</string>
           </property>
           <layout class="QGridLayout" name="gridLayout">
-           <item row="3" column="0" colspan="4">
-            <widget class="QGroupBox" name="groupBox_servo_start">
-             <property name="title">
-              <string>Servo Tilt up/down</string>
+           <item row="1" column="1">
+            <widget class="QCalendarWidget" name="calendar_start">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>200</height>
+              </size>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout">
-              <item>
-               <widget class="QLabel" name="label_servo_start">
-                <property name="text">
-                 <string>Angle</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="lineEdit_servo_start"/>
-              </item>
-             </layout>
             </widget>
            </item>
-           <item row="4" column="0" colspan="4">
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_date_start">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="../images/resources.qrc">:/icons/calendar.png</pixmap>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" colspan="5">
+            <widget class="QPushButton" name="read_data_start_action">
+             <property name="text">
+              <string>Lire les données</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="label_time_start">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="../images/resources.qrc">:/icons/clock_time.png</pixmap>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="2" colspan="3">
             <widget class="QGroupBox" name="groupBox_magneto_start">
              <property name="title">
               <string>Orientation magnetomètre</string>
              </property>
              <layout class="QGridLayout" name="gridLayout_3">
-              <item row="3" column="0">
-               <widget class="QLabel" name="label_head_start">
-                <property name="text">
-                 <string>Heading</string>
-                </property>
-               </widget>
+              <item row="3" column="2">
+               <widget class="QLineEdit" name="lineEdit_head_start"/>
               </item>
-              <item row="0" column="0">
-               <widget class="QLabel" name="label_X_start">
-                <property name="text">
-                 <string>X</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
+              <item row="1" column="2">
+               <widget class="QLineEdit" name="lineEdit_Y_start"/>
               </item>
-              <item row="2" column="0">
-               <widget class="QLabel" name="label_Z_start">
-                <property name="text">
-                 <string>Z</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
+              <item row="2" column="2">
+               <widget class="QLineEdit" name="lineEdit_Z_start"/>
               </item>
-              <item row="1" column="0">
+              <item row="0" column="2">
+               <widget class="QLineEdit" name="lineEdit_X_start"/>
+              </item>
+              <item row="1" column="1">
                <widget class="QLabel" name="label_Y_start">
                 <property name="text">
                  <string>Y</string>
@@ -262,52 +307,82 @@
                </widget>
               </item>
               <item row="0" column="1">
-               <widget class="QLineEdit" name="lineEdit_X_start"/>
-              </item>
-              <item row="1" column="1">
-               <widget class="QLineEdit" name="lineEdit_Y_start"/>
+               <widget class="QLabel" name="label_X_start">
+                <property name="text">
+                 <string>X</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
               </item>
               <item row="2" column="1">
-               <widget class="QLineEdit" name="lineEdit_Z_start"/>
+               <widget class="QLabel" name="label_Z_start">
+                <property name="text">
+                 <string>Z</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
               </item>
-              <item row="3" column="1">
-               <widget class="QLineEdit" name="lineEdit_head_start"/>
+              <item row="0" column="0" rowspan="3">
+               <widget class="QLabel" name="label_magnetometer_start">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="../images/resources.qrc">:/icons/magnetometer 3 axes.png</pixmap>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="label_head_start">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="../images/resources.qrc">:/icons/compass.png</pixmap>
+                </property>
+                <property name="scaledContents">
+                 <bool>false</bool>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
            </item>
-           <item row="1" column="0">
-            <widget class="QLabel" name="label_date_start">
-             <property name="text">
-              <string>Date</string>
+           <item row="4" column="0" colspan="2">
+            <widget class="QGroupBox" name="groupBox_servo_start">
+             <property name="title">
+              <string>Servo Tilt up/down</string>
              </property>
-             <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout">
+              <item>
+               <widget class="QLabel" name="label_servo_start">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="../images/resources.qrc">:/icons/servo 1.png</pixmap>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="lineEdit_servo_start">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </widget>
            </item>
-           <item row="0" column="0" colspan="4">
-            <widget class="QPushButton" name="read_data_start_action">
-             <property name="text">
-              <string>Lire les données</string>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="label_time_start">
-             <property name="text">
-              <string>Heure</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="1">
+           <item row="1" column="3" colspan="2">
             <widget class="QTimeEdit" name="timeEdit_time_start"/>
-           </item>
-           <item row="1" column="1">
-            <widget class="QCalendarWidget" name="calendar_start"/>
            </item>
           </layout>
          </widget>
@@ -329,82 +404,50 @@
            <string>Fin de journée</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_4">
-           <item row="0" column="0" colspan="4">
+           <item row="0" column="0" colspan="5">
             <widget class="QPushButton" name="read_data_end_action">
              <property name="text">
               <string>Lire les données</string>
              </property>
             </widget>
            </item>
-           <item row="4" column="0" colspan="4">
-            <widget class="QGroupBox" name="groupBox_megneto_end">
-             <property name="title">
-              <string>Orientation magnetomètre</string>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_5">
-              <item row="3" column="0">
-               <widget class="QLabel" name="label_Head_end">
-                <property name="text">
-                 <string>Heading</string>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="0">
-               <widget class="QLabel" name="label_X_end">
-                <property name="text">
-                 <string>X</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="0">
-               <widget class="QLabel" name="label_Z_end">
-                <property name="text">
-                 <string>Z</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QLabel" name="label_Y_end">
-                <property name="text">
-                 <string>Y</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QLineEdit" name="lineEdit_X_end"/>
-              </item>
-              <item row="1" column="1">
-               <widget class="QLineEdit" name="lineEdit_Y_end"/>
-              </item>
-              <item row="2" column="1">
-               <widget class="QLineEdit" name="lineEdit_Z_end"/>
-              </item>
-              <item row="3" column="1">
-               <widget class="QLineEdit" name="lineEdit_head_end"/>
-              </item>
-             </layout>
-            </widget>
-           </item>
            <item row="1" column="0">
             <widget class="QLabel" name="label_date_end">
              <property name="text">
-              <string>Date</string>
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="../images/resources.qrc">:/icons/calendar.png</pixmap>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
              </property>
             </widget>
            </item>
-           <item row="3" column="0" colspan="4">
+           <item row="1" column="1">
+            <widget class="QCalendarWidget" name="calendar_end">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>200</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="label_time_end">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap resource="../images/resources.qrc">:/icons/clock_time.png</pixmap>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="2">
             <widget class="QGroupBox" name="servo_end">
              <property name="title">
               <string>Servo Tilt up/down</string>
@@ -413,7 +456,10 @@
               <item>
                <widget class="QLabel" name="label_servo_end">
                 <property name="text">
-                 <string>Angle</string>
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="../images/resources.qrc">:/icons/servo 1.png</pixmap>
                 </property>
                </widget>
               </item>
@@ -423,20 +469,78 @@
              </layout>
             </widget>
            </item>
-           <item row="1" column="1">
-            <widget class="QCalendarWidget" name="calendar_end"/>
-           </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="label_time_end">
-             <property name="text">
-              <string>Heure</string>
+           <item row="2" column="2" colspan="3">
+            <widget class="QGroupBox" name="groupBox_megneto_end">
+             <property name="title">
+              <string>Orientation magnetomètre</string>
              </property>
-             <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-             </property>
+             <layout class="QGridLayout" name="gridLayout_5">
+              <item row="2" column="2">
+               <widget class="QLineEdit" name="lineEdit_Z_end"/>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLabel" name="label_Y_end">
+                <property name="text">
+                 <string>Y</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="2">
+               <widget class="QLineEdit" name="lineEdit_X_end"/>
+              </item>
+              <item row="1" column="2">
+               <widget class="QLineEdit" name="lineEdit_Y_end"/>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLabel" name="label_X_end">
+                <property name="text">
+                 <string>X</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLabel" name="label_Z_end">
+                <property name="text">
+                 <string>Z</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="2">
+               <widget class="QLineEdit" name="lineEdit_head_end"/>
+              </item>
+              <item row="0" column="0" rowspan="3">
+               <widget class="QLabel" name="label_magnetometer_end">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="../images/resources.qrc">:/icons/magnetometer 3 axes.png</pixmap>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="label_Head_end">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="../images/resources.qrc">:/icons/compass.png</pixmap>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </widget>
            </item>
-           <item row="2" column="1">
+           <item row="1" column="3" colspan="2">
             <widget class="QTimeEdit" name="timeEdit_time_end"/>
            </item>
           </layout>

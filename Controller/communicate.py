@@ -10,31 +10,62 @@ from serial import Serial
 class Communicate:
     """through USB"""
     def __init__(self):
-        self.view = None
-        self.model_rtc = None
-        self.model_magnetometer = None
-        self.model_eeprom = None
+        self._view = None
+        self._model_rtc = None
+        self._model_magnetometer = None
+        self._model_eeprom = None
         self.arduino = Serial()
         self.arduino.baudrate = 9600
 
-    def use_view(self, view):
-        self.view = view
+    @property
+    def view(self):
+        """view property getter"""
+        return self._view
 
-    def use_model_rtc(self, model):
-        """Use this model"""
-        self.model_rtc = model
+    @view.setter
+    def view(self, ui):
+        """view setter"""
+        self._view = ui
 
-    def use_model_magnetometer(self, model):
-        """Use this model"""
+    @property
+    def model_rtc(self):
+        """RTC model getter"""
+        return self._model_rtc
+
+    @model_rtc.setter
+    def model_rtc(self, model):
+        """RTC model"""
+        self._model_rtc = model
+
+    @property
+    def model_magnetometer(self):
+        """Magnetometer model getter"""
+        return self._model_magnetometer
+
+    @model_magnetometer.setter
+    def model_magnetometer(self, model):
+        """Magnetometer model setter"""
         self.model_magnetometer = model
 
-    def use_model_eeprom(self, model):
-        """Use this model"""
-        self.model_eeprom = model
+    @property
+    def model_eeprom(self):
+        """EEPROM model getter"""
+        return self._model_eeprom
 
-    def set_port(self, port):
-        """Set USB port"""
-        self.arduino.port = port
+    @model_eeprom.setter
+    def model_eeprom(self, model):
+        """EEPROM model setter"""
+        self._model_eeprom = model
+
+    @property
+    def port(self):
+        """Arduino USB port getter"""
+        return self.arduino.port
+
+    @port.setter
+    def port(self, p):
+        """Set Arduino USB port"""
+        self.arduino.port = p
 
     def test(self):
         """Test communication with Arduino"""

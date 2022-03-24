@@ -1,6 +1,19 @@
 <RCC>
   <qresource prefix="icons">
+    <file>arduino_icon.png</file>
+    <file>rose_des_vents.png</file>
+    <file>magnetometer 3 axes.png</file>
+    <file>calendar.png</file>
+    <file>clock_time.png</file>
+    <file>compass.png</file>
+    <file>local_world.png</file>
+    <file>sleeping 1.png</file>
+    <file>servo 1.png</file>
+    <file>solar_track_1.png</file>
+    <file>rtc.png</file>
+    <file>USB_plug.png</file>
     <file>Arduino-Nano-hardware v3_0 photo.png</file>
+    <file>USB_key.png</file>
     <file>sunrise 1.png</file>
     <file>sunset 1.png</file>
     <file>calendrier.png</file>
