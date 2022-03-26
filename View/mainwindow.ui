@@ -566,17 +566,15 @@
      <string>Configurer</string>
     </property>
     <addaction name="action_USB_setting"/>
-    <addaction name="action_Date_et_heure"/>
-    <addaction name="action_Unit"/>
    </widget>
-   <widget class="QMenu" name="menu_actions">
+   <widget class="QMenu" name="views_actions">
     <property name="title">
      <string>Action</string>
     </property>
     <addaction name="actionTest_de_connection"/>
     <addaction name="actionQuitter"/>
    </widget>
-   <addaction name="menu_actions"/>
+   <addaction name="views_actions"/>
    <addaction name="menuconfiguration"/>
   </widget>
   <widget class="QStatusBar" name="statusbar">
@@ -615,8 +613,34 @@
    </property>
   </action>
  </widget>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>calendar_solar_tracker</tabstop>
+  <tabstop>timeEdit_solar_tracker</tabstop>
+  <tabstop>write_data_rtc_action</tabstop>
+  <tabstop>read_data_rtc_action</tabstop>
+  <tabstop>calendar_locale</tabstop>
+  <tabstop>timeEdit_locale</tabstop>
+  <tabstop>read_data_start_action</tabstop>
+  <tabstop>calendar_start</tabstop>
+  <tabstop>timeEdit_time_start</tabstop>
+  <tabstop>lineEdit_servo_start</tabstop>
+  <tabstop>lineEdit_X_start</tabstop>
+  <tabstop>lineEdit_Y_start</tabstop>
+  <tabstop>lineEdit_Z_start</tabstop>
+  <tabstop>lineEdit_head_start</tabstop>
+  <tabstop>read_data_end_action</tabstop>
+  <tabstop>calendar_end</tabstop>
+  <tabstop>timeEdit_time_end</tabstop>
+  <tabstop>lineEdit_servo_end</tabstop>
+  <tabstop>lineEdit_X_end</tabstop>
+  <tabstop>lineEdit_Y_end</tabstop>
+  <tabstop>lineEdit_Z_end</tabstop>
+  <tabstop>lineEdit_head_end</tabstop>
+ </tabstops>
  <resources>
   <include location="../images/resources.qrc"/>
+  <include location="../../../../.designer/images/resources.qrc"/>
  </resources>
  <connections/>
 </ui>

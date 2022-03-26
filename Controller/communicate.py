@@ -8,9 +8,11 @@ from serial import Serial
 
 
 class Communicate:
-    """through USB"""
-    def __init__(self):
-        self._view = None
+    """Control how to communicate to Arduino and model & Views concerned by communications"""
+    def __init__(self, main_view):
+        self.main_view = main_view
+        self._config_view = None
+        self._test_view = None
         self._model_rtc = None
         self._model_magnetometer = None
         self._model_eeprom = None
@@ -18,14 +20,24 @@ class Communicate:
         self.arduino.baudrate = 9600
 
     @property
-    def view(self):
+    def config_view(self):
         """view property getter"""
-        return self._view
+        return self._config_view
 
-    @view.setter
-    def view(self, ui):
+    @config_view.setter
+    def config_view(self, ui):
         """view setter"""
-        self._view = ui
+        self._config_view = ui
+
+    @property
+    def test_view(self):
+        """view property getter"""
+        return self._test_view
+
+    @test_view.setter
+    def test_view(self, ui):
+        """view setter"""
+        self._test_view = ui
 
     @property
     def model_rtc(self):
@@ -69,6 +81,7 @@ class Communicate:
 
     def test(self):
         """Test communication with Arduino"""
+        print("Start test communication")
         self.arduino.open()
         self.arduino.write(b'Test')
 

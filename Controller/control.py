@@ -1,27 +1,32 @@
 """Main root Controller
 All the other dedicated controllers are child of this Controller"""
 
+from PySide6.QtCore import QObject, Signal, Slot
+
 from Controller.setting import Setting
 from Controller.communicate import Communicate
-from Controller.menu_actions import MenuActions
+from Controller.views_actions import ViewsActions
 
 
 class Control:
     """Main Controller"""
+
+
+
     def __init__(self):
         self._communication = None
         self._setting = None
-        self._menu_actions = None
+        self._views_actions = None
 
     @property
-    def menu_actions(self):
-        """menu_actions property getter"""
-        return self._menu_actions
+    def views_actions(self):
+        """views_actions property getter"""
+        return self._views_actions
 
-    @menu_actions.setter
-    def menu_actions(self, main_ui):
-        """menu_actions setter"""
-        self._menu_actions = MenuActions(main_ui)
+    @views_actions.setter
+    def views_actions(self, main_ui):
+        """views_actions setter"""
+        self._views_actions = ViewsActions(main_ui)
 
     @property
     def setting(self):
@@ -39,7 +44,6 @@ class Control:
         return self._communication
 
     @communication.setter
-    def communication(self, port):
+    def communication(self, main_view):
         """communication setter"""
-        self._communication = Communicate()
-        self._communication.port(port)
+        self._communication = Communicate(main_view)
